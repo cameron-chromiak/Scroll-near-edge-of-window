@@ -1,0 +1,26 @@
+.left{
+  background: tan;
+
+}
+.right{
+  background: aqua;
+}
+.down{
+  background: tomato
+}
+.center{
+  background: lightblue;
+}
+.container{
+  width: 200vw;
+  flex-wrap: wrap;
+  display: flex;
+}
+.section{
+  height: 100vh;
+  width: 100vw;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
