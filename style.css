@@ -1,3 +1,9 @@
+/* .section-shrink{
+  width: 100vw !important;
+  height: 100vh !important;
+  background: orange !important;
+  transition: ease-in 1s;
+} */
 .left{
   background: tan;
 
