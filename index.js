@@ -60,12 +60,15 @@ $(document).ready(function(){
 //
 
   let isMouseClicked = false;
+  let mouseXStart;
+  let mouseYStart;
 
   container.addEventListener('mousedown',function(e){
     isMouseClicked = true
+    mouseXStart = e.pageX
     console.log(isMouseClicked)
   })
-  container.addEventListener('mouseup',function(e){
+  container.addEventListener('mouseup',function(e){ // TODO: Or mouse leave window
     isMouseClicked = false
     console.log(isMouseClicked)
   })
@@ -73,7 +76,9 @@ $(document).ready(function(){
 
     document.addEventListener('mousemove', function(e){
         if(isMouseClicked){
-      console.log(e.pageX);
+          let scrollXDist = e.pageX - mouseXStart;
+          scrollPosX = width + scrollXDist
+          window.scrollTo(scrollPosX ,0 )
     }
   })
 
