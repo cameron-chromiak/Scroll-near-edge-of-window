@@ -64,8 +64,8 @@ $(document).ready(function(){
   let mouseYStart;
 
   container.addEventListener('mousedown',function(e){
-    isMouseClicked = true
     mouseXStart = e.pageX
+    isMouseClicked = true
     console.log(isMouseClicked)
   })
   container.addEventListener('mouseup',function(e){ // TODO: Or mouse leave window
@@ -76,9 +76,11 @@ $(document).ready(function(){
 
     document.addEventListener('mousemove', function(e){
         if(isMouseClicked){
-          let scrollXDist = e.pageX - mouseXStart;
-          scrollPosX = width + scrollXDist
-          window.scrollTo(scrollPosX ,0 )
+          let scrollDistX = mouseXStart - e.pageX 
+          if(!scrollDistX == 0){
+            scrollPosX = mouseXStart + scrollDistX
+            window.scrollTo(scrollPosX ,0 )
+          }
     }
   })
 
